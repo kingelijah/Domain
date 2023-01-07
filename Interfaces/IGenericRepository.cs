@@ -10,11 +10,11 @@ namespace Domain
     public interface IGenericRepository<T> where T : class
     {
         Task<T> GetByIdAsync(int id);
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<IQueryable<T>> FindAsync(Expression<Func<T, bool>> expression);
+        IEnumerable<T> GetAll();
+        IQueryable<T> Find(Expression<Func<T, bool>> expression);
         Task AddAsync(T entity);
-        Task RemoveAsync(T entity);
-        Task UpdateAsync(T entity);
+        void Remove(T entity);
+        void Update(T entity);
 
     }
 }

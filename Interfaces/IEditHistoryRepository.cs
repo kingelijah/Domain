@@ -9,5 +9,7 @@ namespace Domain.Interfaces
 {
     public interface IEditHistoryRepository : IGenericRepository<EditHistory>
     {
+        Task AddEditAsync(int Id);
+        IEnumerable<EditHistory> GetHistory(int Id);
     }
 }
